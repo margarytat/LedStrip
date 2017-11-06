@@ -1,0 +1,106 @@
+<p id="notice"><%= notice %></p>
+<h1>
+  NeoPixels
+</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th style="border: 1px solid black;">
+        Id
+      </th>
+      <th style="border: 1px solid black;">
+        Name
+      </th>
+      
+        <th colspan='1' style="border: 1px solid black;">
+          Led
+        </th>
+      
+        <th colspan='1' style="border: 1px solid black;">
+          Button
+        </th>
+      
+        <th colspan='2' style="border: 1px solid black;">
+          NeoPixelStickEight
+        </th>
+      
+      <th style="border: 1px solid black;">
+        &nbsp;
+      </th>
+    </tr>
+    <tr>
+      <th>
+        &nbsp;
+      </th>
+      <th>
+        &nbsp;
+      </th>
+      
+        
+          <th>
+            led_state
+          </th>
+        
+      
+        
+          <th>
+            safe
+          </th>
+        
+      
+        
+          <th>
+            led_index
+          </th>
+        
+          <th>
+            led_color
+          </th>
+        
+      
+      <th>
+        &nbsp;
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @neo_pixels.each do |object| %>
+      <tr id='<%= object.apiotics_instance %>'>
+        <td>
+          <%= object.apiotics_instance %>
+        </td>
+        <td>
+          <%= object.name %>
+        </td>
+        
+          
+            <td class='neo_pixel-led-led_state'>
+              <%= object.led.led_state %>
+            </td>
+          
+        
+          
+            <td class='neo_pixel-button-safe'>
+              <%= object.button.safe %>
+            </td>
+          
+        
+          
+            <td class='neo_pixel-neo_pixel_stick_eight-led_index'>
+              <%= object.neo_pixel_stick_eight.led_index %>
+            </td>
+          
+            <td class='neo_pixel-neo_pixel_stick_eight-led_color'>
+              <%= object.neo_pixel_stick_eight.led_color %>
+            </td>
+          
+        
+        <td>
+          <%= link_to "Edit", edit_neo_pixel_path(object)%>
+          <%= link_to "Show", neo_pixel_path(object) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
