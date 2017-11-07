@@ -11,8 +11,8 @@ module NeoPixel
     after_commit :extract, unless: :skip_extract
     after_commit :channel_push
     
-    validates :led_index, inclusion: { in: 1..7,
-    message: "%{value} is not within the range 1..7" }
+    validates :led_index, inclusion: { in: 0..7,
+    message: "%{value} is not within the range 0..7" }
   
     
     def sync
